@@ -1,0 +1,174 @@
+/* ===== تحسينات للموبايل ===== */
+
+/* تحسينات للشاشات الصغيرة جداً */
+@media (max-width: 360px) {
+    .cookie-button {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .cookie-emoji {
+        font-size: 90px;
+    }
+    
+    .header-content h1 {
+        font-size: 20px;
+    }
+    
+    .stat-value {
+        font-size: 16px;
+    }
+}
+
+/* تحسينات للشاشات المتوسطة */
+@media (min-width: 768px) {
+    .game-main {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .cookie-section {
+        flex: 1;
+    }
+    
+    .shop-section {
+        flex: 1;
+        max-width: 500px;
+    }
+    
+    .cookie-button {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .cookie-emoji {
+        font-size: 150px;
+    }
+}
+
+/* تحسينات للشاشات الكبيرة */
+@media (min-width: 1024px) {
+    .game-main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* منع التحديد على الموبايل */
+.cookie-button,
+.building-item,
+.upgrade-item,
+.footer-btn,
+.shop-tab {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* تحسين اللمس */
+.cookie-button,
+.building-item,
+.upgrade-item,
+.footer-btn {
+    touch-action: manipulation;
+}
+
+/* تحسين الأداء للأنيميشن */
+.cookie-button,
+.cookie-emoji,
+.click-effect {
+    will-change: transform;
+}
+
+/* إخفاء سكرول بار على iOS */
+.shop-content {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* تحسين الفوكس على الموبايل */
+button:focus,
+input:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* تحسين الأزرار للمس */
+.footer-btn,
+.shop-tab,
+.building-item,
+.upgrade-item {
+    min-height: 44px;
+}
+
+/* تحسين النصوص للقراءة على الموبايل */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* منع التكبير على الإدخالات */
+input[type="text"],
+input[type="number"],
+textarea {
+    font-size: 16px;
+}
+
+/* تحسين الظلال على الموبايل */
+@media (max-width: 768px) {
+    .cookie-button {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* وضع الشاشة الأفقية */
+@media (orientation: landscape) and (max-height: 500px) {
+    .game-main {
+        flex-direction: row;
+    }
+    
+    .cookie-section {
+        flex: 1;
+    }
+    
+    .shop-section {
+        flex: 1;
+    }
+    
+    .cookie-button {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .cookie-emoji {
+        font-size: 90px;
+    }
+    
+    .shop-content {
+        max-height: 250px;
+    }
+}
+
+/* تحسين الأداء */
+* {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* منع السحب على الصور والأيقونات */
+img,
+.cookie-emoji,
+.building-icon,
+.upgrade-icon {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
