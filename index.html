@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="description" content="لعبة كوكيز كليكر - اضغط على الكوكيز واجمع النقاط!">
+    <title>كوكيز كليكر 🍪</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+    <!-- شاشة التحميل -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="cookie-loader">🍪</div>
+            <p>جاري التحميل...</p>
+        </div>
+    </div>
+
+    <!-- الشاشة الرئيسية -->
+    <div id="game-container" style="display: none;">
+        <!-- الهيدر -->
+        <header class="game-header">
+            <div class="header-content">
+                <h1>🍪 كوكيز كليكر</h1>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">الكوكيز:</span>
+                        <span id="cookie-count" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">في الثانية:</span>
+                        <span id="cookies-per-second" class="stat-value">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- منطقة اللعب الرئيسية -->
+        <main class="game-main">
+            <!-- منطقة الكوكيز -->
+            <section class="cookie-section">
+                <div class="cookie-container">
+                    <button id="cookie-button" class="cookie-button" aria-label="اضغط على الكوكيز">
+                        <span class="cookie-emoji">🍪</span>
+                    </button>
+                    <div id="click-effect-container"></div>
+                </div>
+            </section>
+
+            <!-- قائمة المباني والترقيات -->
+            <section class="shop-section">
+                <div class="shop-tabs">
+                    <button class="shop-tab active" data-tab="buildings">المباني</button>
+                    <button class="shop-tab" data-tab="upgrades">الترقيات</button>
+                </div>
+
+                <!-- المباني -->
+                <div id="buildings-tab" class="shop-content active">
+                    <div id="buildings-list" class="buildings-list">
+                        <!-- سيتم إضافة المباني ديناميكياً -->
+                    </div>
+                </div>
+
+                <!-- الترقيات -->
+                <div id="upgrades-tab" class="shop-content">
+                    <div id="upgrades-list" class="upgrades-list">
+                        <!-- سيتم إضافة الترقيات ديناميكياً -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- القائمة السفلية -->
+        <footer class="game-footer">
+            <button id="save-button" class="footer-btn">💾 حفظ</button>
+            <button id="reset-button" class="footer-btn">🔄 إعادة تعيين</button>
+            <button id="settings-button" class="footer-btn">⚙️ الإعدادات</button>
+        </footer>
+    </div>
+
+    <!-- نافذة الإعدادات -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚙️ الإعدادات</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="sound-toggle" checked>
+                        <span>تفعيل الأصوات</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="auto-save-toggle" checked>
+                        <span>الحفظ التلقائي</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <button id="export-save" class="btn-secondary">تصدير البيانات</button>
+                    <button id="import-save" class="btn-secondary">استيراد البيانات</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة التأكيد -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚠️ تأكيد</h2>
+            </div>
+            <div class="modal-body">
+                <p id="confirm-message"></p>
+                <div class="modal-actions">
+                    <button id="confirm-yes" class="btn-danger">نعم</button>
+                    <button id="confirm-no" class="btn-secondary">لا</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- السكريبتات -->
+    <script src="js/config.js"></script>
+    <script src="js/game-state.js"></script>
+    <script src="js/buildings.js"></script>
+    <script src="js/upgrades.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/save-system.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
